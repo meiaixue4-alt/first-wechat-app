@@ -1,0 +1,134 @@
+.page {
+  padding: 0 var(--spacing-page);
+  min-height: 100vh;
+}
+
+/* 搜索栏 */
+.search-bar {
+  display: flex;
+  align-items: center;
+  padding-top: 24rpx;
+  padding-bottom: 16rpx;
+  position: relative;
+}
+
+.search-input {
+  flex: 1;
+  height: 72rpx;
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius);
+  padding: 0 24rpx;
+  font-family: var(--font-mono);
+  font-size: 24rpx;
+  color: var(--color-text-body);
+}
+
+.search-placeholder {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+}
+
+.search-clear {
+  position: absolute;
+  right: 16rpx;
+  font-family: var(--font-mono);
+  font-size: 36rpx;
+  color: var(--color-text-muted);
+  padding: 8rpx;
+}
+
+/* 分类筛选 */
+.category-tabs {
+  white-space: nowrap;
+  padding-bottom: 12rpx;
+}
+
+.tab {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 22rpx;
+  color: var(--color-text-muted);
+  padding: 8rpx 20rpx;
+  margin-right: 8rpx;
+  border-bottom: 2px solid transparent;
+  letter-spacing: 0.5px;
+  transition: color 150ms ease-out;
+}
+
+.tab-hover {
+  color: var(--color-text-body);
+}
+
+.tab-active {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+/* 列表 */
+.list-item {
+  padding: 24rpx 0;
+  border-bottom: 0.5px solid var(--color-border);
+  transition: background-color 100ms ease-out;
+}
+
+.list-item-active {
+  background-color: var(--color-bg-elevated);
+}
+
+.item-meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6rpx;
+}
+
+.item-category {
+  font-family: var(--font-mono);
+  font-size: 22rpx;
+  color: var(--color-text-muted);
+  letter-spacing: 1px;
+  margin-right: 12rpx;
+}
+
+.item-date {
+  font-family: var(--font-mono);
+  font-size: 22rpx;
+  color: var(--color-text-muted);
+}
+
+.item-title {
+  display: block;
+  font-family: var(--font-title);
+  font-size: 30rpx;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.4;
+}
+
+/* 加载更多 */
+.load-more {
+  padding: 32rpx 0;
+  text-align: center;
+}
+
+.load-more-text {
+  font-family: var(--font-mono);
+  font-size: 22rpx;
+  color: var(--color-text-muted);
+}
+
+/* 空状态 */
+.empty {
+  padding-top: 160rpx;
+  text-align: center;
+}
+
+.empty-text {
+  font-family: var(--font-mono);
+  font-size: 22rpx;
+  color: var(--color-text-muted);
+}

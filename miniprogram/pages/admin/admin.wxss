@@ -1,0 +1,242 @@
+.page {
+  padding: 24rpx;
+  min-height: 100vh;
+  background: #0d1117;
+  color: #c9d1d9;
+}
+
+/* 密码锁 */
+.lock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 200rpx;
+}
+.lock-title {
+  font-size: 40rpx;
+  font-weight: 700;
+  margin-bottom: 48rpx;
+  color: #f0f6fc;
+}
+.lock-input {
+  width: 480rpx;
+  height: 80rpx;
+  border: 1rpx solid #30363d;
+  border-radius: 12rpx;
+  padding: 0 24rpx;
+  color: #c9d1d9;
+  background: #161b22;
+  margin-bottom: 24rpx;
+}
+.lock-btn {
+  width: 480rpx;
+  background: #238636;
+  color: #fff;
+  border-radius: 12rpx;
+}
+.lock-err {
+  margin-top: 16rpx;
+  color: #f85149;
+  font-size: 26rpx;
+}
+
+/* 头部 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 24rpx;
+}
+.header-title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #f0f6fc;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+}
+.cloud-status {
+  font-size: 22rpx;
+  padding: 4rpx 16rpx;
+  border-radius: 12rpx;
+}
+.cloud-status.connected {
+  background: rgba(35, 134, 54, 0.15);
+  color: #3fb950;
+}
+.cloud-status.disconnected {
+  background: rgba(248, 81, 73, 0.15);
+  color: #f85149;
+}
+.cloud-status.unknown {
+  background: rgba(139, 148, 158, 0.1);
+  color: #8b949e;
+}
+.header-count {
+  font-size: 26rpx;
+  color: #8b949e;
+}
+
+/* 表单 */
+.form-card {
+  background: #161b22;
+  border: 1rpx solid #30363d;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 32rpx;
+}
+.form-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #58a6ff;
+  margin-bottom: 20rpx;
+  display: block;
+}
+.form-row {
+  margin-bottom: 20rpx;
+}
+.form-label {
+  display: block;
+  font-size: 26rpx;
+  color: #8b949e;
+  margin-bottom: 8rpx;
+}
+.form-picker {
+  height: 72rpx;
+  line-height: 72rpx;
+  background: #0d1117;
+  border: 1rpx solid #30363d;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  color: #c9d1d9;
+}
+.form-input {
+  height: 72rpx;
+  background: #0d1117;
+  border: 1rpx solid #30363d;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  color: #c9d1d9;
+}
+.form-textarea {
+  min-height: 120rpx;
+  background: #0d1117;
+  border: 1rpx solid #30363d;
+  border-radius: 8rpx;
+  padding: 16rpx 20rpx;
+  color: #c9d1d9;
+}
+.form-textarea-lg {
+  min-height: 240rpx;
+}
+
+.form-actions {
+  display: flex;
+  gap: 16rpx;
+  margin-top: 24rpx;
+}
+.btn-submit {
+  flex: 1;
+  background: #238636;
+  color: #fff;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+}
+.btn-cancel {
+  flex: 1;
+  background: #30363d;
+  color: #c9d1d9;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+}
+
+/* 列表 */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+.list-header text {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #f0f6fc;
+}
+.btn-import {
+  background: #21262d;
+  color: #58a6ff;
+  border: 1rpx solid #30363d;
+  font-size: 24rpx;
+}
+.list-header-actions {
+  display: flex;
+  gap: 12rpx;
+}
+.btn-dedup {
+  background: #21262d;
+  color: #f85149;
+  border: 1rpx solid #30363d;
+  font-size: 24rpx;
+}
+.btn-clear-cache {
+  background: #21262d;
+  color: #d2a853;
+  border: 1rpx solid #30363d;
+  font-size: 24rpx;
+}
+.import-progress {
+  text-align: center;
+  font-size: 24rpx;
+  color: #58a6ff;
+  margin-bottom: 16rpx;
+}
+.tip-item {
+  background: #161b22;
+  border: 1rpx solid #30363d;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  margin-bottom: 12rpx;
+}
+.tip-meta {
+  display: flex;
+  gap: 16rpx;
+  margin-bottom: 8rpx;
+}
+.tip-cat {
+  font-size: 22rpx;
+  color: #58a6ff;
+  background: rgba(88, 166, 255, 0.1);
+  padding: 2rpx 12rpx;
+  border-radius: 6rpx;
+}
+.tip-date {
+  font-size: 22rpx;
+  color: #8b949e;
+}
+.tip-title {
+  display: block;
+  font-size: 28rpx;
+  color: #c9d1d9;
+  margin-bottom: 12rpx;
+}
+.tip-actions {
+  display: flex;
+  gap: 24rpx;
+}
+.tip-action {
+  font-size: 24rpx;
+  color: #58a6ff;
+  padding: 4rpx 0;
+}
+
+.btn-more {
+  background: #21262d;
+  color: #8b949e;
+  border-radius: 8rpx;
+  font-size: 26rpx;
+}
+.load-more {
+  margin-top: 16rpx;
+}

@@ -1,0 +1,62 @@
+<!-- Tips 详情页 -->
+<view class="page">
+  <block wx:if="{{tip}}">
+    <!-- 分类编号 -->
+    <text class="detail-category">[{{categoryMap[tip.category].id}}] {{categoryMap[tip.category].name}}</text>
+
+    <!-- 一句话结论 -->
+    <text class="detail-title">{{tip.title}}</text>
+
+    <!-- 日期 -->
+    <text class="detail-date">{{tip.date}}</text>
+
+    <view class="divider"></view>
+
+    <!-- 正文 -->
+    <view class="detail-body">
+      <text class="body-text">{{tip.body}}</text>
+    </view>
+
+    <!-- 参考文献 -->
+    <view class="references" wx:if="{{tip.references.length}}">
+      <text class="ref-title">参考文献</text>
+      <view class="ref-list">
+        <text class="ref-item" wx:for="{{tip.references}}" wx:key="index">[{{index + 1}}] {{item}}</text>
+      </view>
+    </view>
+
+    <view class="divider" style="margin: 32rpx 0;"></view>
+
+    <!-- 互动操作栏 -->
+    <view class="action-bar">
+      <text class="action-btn {{usefulDone ? 'useful-done' : ''}}" bindtap="onUseful" hover-class="action-btn-useful-hover" hover-stay-time="{{100}}">有用 {{tip.usefulCount}}</text>
+      <text class="action-sep">·</text>
+      <text class="action-btn" bindtap="onNotInterested" hover-class="action-btn-neutral-hover" hover-stay-time="{{100}}">不感兴趣</text>
+      <text class="action-sep">·</text>
+      <text class="action-btn action-dispute" bindtap="onDispute" hover-class="action-btn-dispute-hover" hover-stay-time="{{100}}">质疑</text>
+      <text class="action-sep">·</text>
+      <text class="action-btn {{isFav ? 'fav-active' : ''}}" bindtap="onToggleFav" hover-class="action-btn-fav-hover" hover-stay-time="{{100}}">收藏</text>
+      <text class="action-sep">·</text>
+      <button class="share-btn" open-type="share" hover-class="action-btn-fav-hover">转发</button>
+    </view>
+
+    <!-- 底部引流 -->
+    <view class="lead-in" bindtap="goHome">
+      <text class="lead-text">来自「格物致知」小程序</text>
+      <text class="lead-link">去看看今天的 Tips</text>
+    </view>
+  </block>
+
+  <!-- 加载中 -->
+  <view class="loading" wx:else>
+    <text class="loading-text">加载中…</text>
+  </view>
+
+  <!-- 质疑弹窗 -->
+  <dispute-modal
+    visible="{{showDispute}}"
+    tip-id="{{disputeTipId}}"
+    bindcancel="onDisputeCancel"
+    bindsubmit="onDisputeSubmit"
+  />
+</view>

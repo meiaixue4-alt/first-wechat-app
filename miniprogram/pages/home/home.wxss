@@ -1,0 +1,182 @@
+.page {
+  padding: 0 var(--spacing-page);
+  min-height: 100vh;
+}
+
+/* 日期头 */
+.date-header {
+  padding-top: 32rpx;
+  padding-bottom: 16rpx;
+}
+
+.date-text {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 22rpx;
+  color: var(--color-text-muted);
+  letter-spacing: 1px;
+}
+
+.date-sub {
+  display: block;
+  font-size: 24rpx;
+  color: var(--color-text-muted);
+  margin-top: 4rpx;
+}
+
+.divider-full {
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+/* 卡片 */
+.tip-card {
+  background-color: var(--color-bg-surface);
+  padding: 16rpx 0;
+  border-bottom: 0.5px solid var(--color-border);
+  transition: background-color 100ms ease-out;
+}
+
+.tip-card:last-child {
+  border-bottom: none;
+}
+
+/* 卡片点击态 */
+.card-active {
+  background-color: var(--color-bg-elevated);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-category {
+  font-family: var(--font-mono);
+  font-size: 22rpx;
+  color: var(--color-text-muted);
+  letter-spacing: 1px;
+}
+
+.card-date {
+  font-family: var(--font-mono);
+  font-size: 22rpx;
+  color: var(--color-text-muted);
+}
+
+.card-title {
+  display: block;
+  font-family: var(--font-title);
+  font-size: 34rpx;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.4;
+  margin-top: 8rpx;
+}
+
+.card-summary {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: 28rpx;
+  color: var(--color-text-body);
+  line-height: 1.5;
+  margin-top: 8rpx;
+}
+
+/* 操作栏 */
+.card-actions {
+  margin-top: 12rpx;
+  padding-top: 12rpx;
+  border-top: 0.5px solid var(--color-border);
+}
+
+.action-btn {
+  font-family: var(--font-mono);
+  font-size: 22rpx;
+  color: var(--color-text-muted);
+  transition: color 150ms ease-out;
+  padding: 4rpx 0;
+}
+
+.action-sep {
+  margin: 0 8rpx;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+}
+
+/* 按钮悬浮/按压态 */
+.action-btn-useful-hover {
+  color: var(--color-positive);
+}
+
+.action-btn-dispute-hover {
+  color: var(--color-warning);
+}
+
+.action-btn-fav-hover {
+  color: var(--color-text-primary);
+}
+
+.action-btn-neutral-hover {
+  color: var(--color-text-body);
+}
+
+/* 按钮激活态（已点击） */
+.useful-done {
+  color: var(--color-positive);
+}
+
+.not-interested-done {
+  color: var(--color-text-muted);
+  opacity: 0.5;
+}
+
+.fav-active {
+  color: var(--color-text-primary);
+}
+
+/* 骨架屏 */
+.skeleton-card {
+  background-color: var(--color-bg-surface);
+  padding: 16rpx 0;
+  border-bottom: 0.5px solid var(--color-border);
+}
+
+.skeleton-line {
+  height: 20rpx;
+  background-color: var(--color-bg-elevated);
+  border-radius: var(--radius);
+  margin-bottom: 12rpx;
+}
+
+.skeleton-label {
+  width: 180rpx;
+}
+
+.skeleton-title {
+  width: 80%;
+  height: 36rpx;
+}
+
+.skeleton-text {
+  width: 95%;
+}
+
+.skeleton-text-short {
+  width: 60%;
+}
+
+/* 空状态 */
+.empty {
+  padding-top: 160rpx;
+  text-align: center;
+}
+
+.empty-text {
+  font-family: var(--font-mono);
+  font-size: 22rpx;
+  color: var(--color-text-muted);
+}

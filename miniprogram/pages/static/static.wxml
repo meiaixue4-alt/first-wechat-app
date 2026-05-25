@@ -1,0 +1,5 @@
+<view class="page">
+  <text class="static-title">{{title}}</text>
+  <view class="divider"></view>
+  <text class="static-body">{{body}}</text>
+</view>

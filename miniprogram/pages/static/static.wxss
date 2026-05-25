@@ -1,0 +1,28 @@
+.page {
+  padding: 0 var(--spacing-page);
+  min-height: 100vh;
+  padding-bottom: 48rpx;
+}
+
+.static-title {
+  display: block;
+  font-family: var(--font-title);
+  font-size: 34rpx;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  padding-top: 24rpx;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--color-border);
+  margin: 24rpx 0;
+}
+
+.static-body {
+  display: block;
+  font-size: 28rpx;
+  color: var(--color-text-body);
+  line-height: 1.8;
+  white-space: pre-line;
+}

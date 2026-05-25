@@ -1,0 +1,64 @@
+<!-- 质疑/纠错弹窗 — 底部滑入 -->
+<view class="overlay" wx:if="{{visible}}" catchtouchmove="noop" bindtap="onOverlayTap">
+  <view class="modal {{closing ? 'modal-closing' : ''}}" catchtap="noop" bindanimationend="onAnimationEnd">
+    <!-- 关闭按钮 -->
+    <text class="modal-close" bindtap="onCancel">×</text>
+
+    <!-- 标题 -->
+    <text class="modal-title">这篇 Tips 可能有误？</text>
+    <text class="modal-sub">欢迎指正，我们会认真核实每一条反馈</text>
+
+    <!-- 质疑理由（必填） -->
+    <text class="label">质疑理由 <text class="required">*</text></text>
+    <textarea
+      class="textarea"
+      placeholder="请告诉我们哪里不对…（如事实错误、数据过时、表述不准确等）"
+      placeholder-class="textarea-placeholder"
+      value="{{reason}}"
+      bindinput="onReasonInput"
+      maxlength="500"
+      auto-height
+    />
+
+    <!-- 补充材料（选填） -->
+    <text class="label">补充材料（选填）</text>
+    <view class="attachment-area">
+      <view class="attach-btn" wx:if="{{!attachment}}" bindtap="onAddAttachment" hover-class="btn-cancel-hover">
+        <text class="attach-plus">+</text>
+        <text class="attach-text">添加附件</text>
+      </view>
+      <view class="attach-preview" wx:else>
+        <image class="attach-img" src="{{attachment}}" mode="aspectFill" />
+        <text class="attach-name">已选择图片</text>
+        <text class="attach-remove" bindtap="onRemoveAttachment">×</text>
+      </view>
+    </view>
+
+    <!-- 身份标注（选填） -->
+    <text class="label">你的身份（选填）</text>
+    <view class="identity-group">
+      <view
+        class="identity-item {{identity === item.value ? 'identity-active' : ''}}"
+        wx:for="{{identityOptions}}"
+        wx:key="value"
+        data-value="{{item.value}}"
+        bindtap="onIdentityTap"
+      >
+        <view class="radio {{identity === item.value ? 'radio-checked' : ''}}">
+          <view class="radio-dot" wx:if="{{identity === item.value}}"></view>
+        </view>
+        <text class="identity-label">{{item.label}}</text>
+      </view>
+    </view>
+
+    <!-- 操作按钮 -->
+    <view class="modal-actions">
+      <view class="btn-cancel" bindtap="onCancel" hover-class="btn-cancel-hover" hover-stay-time="{{100}}">
+        <text class="btn-cancel-text">取消</text>
+      </view>
+      <view class="btn-submit" bindtap="onSubmit" hover-class="btn-submit-hover" hover-stay-time="{{100}}">
+        <text class="btn-submit-text">提交反馈</text>
+      </view>
+    </view>
+  </view>
+</view>

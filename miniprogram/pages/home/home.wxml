@@ -1,0 +1,60 @@
+<!-- 首页「今日」 -->
+<view class="page">
+  <!-- 日期头 -->
+  <view class="date-header">
+    <text class="date-text">{{todayDate}}</text>
+    <text class="date-sub">格物致知 · 今日5篇</text>
+  </view>
+  <view class="divider-full"></view>
+
+  <!-- 骨架屏 -->
+  <block wx:if="{{loading}}">
+    <view class="skeleton-card" wx:for="{{5}}" wx:key="index">
+      <view class="skeleton-line skeleton-label"></view>
+      <view class="skeleton-line skeleton-title"></view>
+      <view class="skeleton-line skeleton-text"></view>
+      <view class="skeleton-line skeleton-text skeleton-text-short"></view>
+    </view>
+  </block>
+
+  <!-- Tips 卡片 -->
+  <block wx:else>
+    <view class="tip-card" wx:for="{{tips}}" wx:key="id" bindtap="onCardTap" data-id="{{item.id}}" hover-class="card-active" hover-stay-time="{{80}}">
+      <!-- 编号行 -->
+      <view class="card-header">
+        <text class="card-category">[{{categoryMap[item.category].id}}] {{categoryMap[item.category].name}}</text>
+        <text class="card-date">{{item.date}}</text>
+      </view>
+
+      <!-- 标题 -->
+      <text class="card-title">{{item.title}}</text>
+
+      <!-- 摘要 -->
+      <text class="card-summary">{{item.summary}}</text>
+
+      <!-- 操作栏 -->
+      <view class="card-actions">
+        <text class="action-btn {{item.usefulDone ? 'useful-done' : ''}}" catchtap="onUseful" data-id="{{item.id}}" hover-class="action-btn-useful-hover" hover-stay-time="{{100}}">有用 {{item.usefulCount}}</text>
+        <text class="action-sep">·</text>
+        <text class="action-btn {{item.notInterestedDone ? 'not-interested-done' : ''}}" catchtap="onNotInterested" data-id="{{item.id}}" hover-class="action-btn-neutral-hover" hover-stay-time="{{100}}">不感兴趣</text>
+        <text class="action-sep">·</text>
+        <text class="action-btn" catchtap="onDispute" data-id="{{item.id}}" hover-class="action-btn-dispute-hover" hover-stay-time="{{100}}">质疑</text>
+        <text class="action-sep">·</text>
+        <text class="action-btn {{item.isFavorited ? 'fav-active' : ''}}" catchtap="onToggleFav" data-id="{{item.id}}" hover-class="action-btn-fav-hover" hover-stay-time="{{100}}">收藏</text>
+      </view>
+    </view>
+  </block>
+
+  <!-- 空状态 -->
+  <view class="empty" wx:if="{{!loading && tips.length === 0}}">
+    <text class="empty-text">今日 Tips 还在路上</text>
+  </view>
+
+  <!-- 质疑弹窗 -->
+  <dispute-modal
+    visible="{{showDispute}}"
+    tip-id="{{disputeTipId}}"
+    bindcancel="onDisputeCancel"
+    bindsubmit="onDisputeSubmit"
+  />
+</view>

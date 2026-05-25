@@ -1,0 +1,18 @@
+<!-- 我的质疑反馈 -->
+<view class="page">
+  <block wx:if="{{list.length}}">
+    <view class="list-item" wx:for="{{list}}" wx:key="id" bindtap="onItemTap" data-id="{{item.tipId}}" hover-class="list-item-active" hover-stay-time="{{80}}">
+      <view class="item-main">
+        <text class="item-header">对「{{item.tipTitle}}」的质疑</text>
+        <text class="item-reason">{{item.disputeReason}}</text>
+        <text class="item-meta">{{item.createdAt}} · {{item.identityLabel || '未标注身份'}}</text>
+      </view>
+      <text class="item-arrow">></text>
+    </view>
+  </block>
+
+  <view class="empty" wx:else>
+    <text class="empty-text">暂无质疑反馈记录</text>
+    <text class="empty-sub">发现错误？欢迎在详情页提交质疑</text>
+  </view>
+</view>

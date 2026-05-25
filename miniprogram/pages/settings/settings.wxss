@@ -1,0 +1,50 @@
+.page {
+  padding: 0 var(--spacing-page);
+  min-height: 100vh;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88rpx;
+  transition: background-color 100ms ease-out;
+}
+
+.menu-item-active {
+  background-color: var(--color-bg-elevated);
+}
+
+.menu-label {
+  font-size: 28rpx;
+  color: var(--color-text-body);
+}
+
+.menu-arrow {
+  font-family: var(--font-mono);
+  font-size: 22rpx;
+  color: var(--color-text-muted);
+}
+
+.menu-divider {
+  height: 0.5px;
+  background-color: var(--color-border);
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--color-border);
+  margin-top: 48rpx;
+}
+
+.footer {
+  text-align: center;
+  padding-top: 48rpx;
+}
+
+.footer-text {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 20rpx;
+  color: var(--color-text-muted);
+}

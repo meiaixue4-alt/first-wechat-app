@@ -1,0 +1,42 @@
+<!-- 发现长廊 -->
+<view class="page">
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <input class="search-input" placeholder="搜索你感兴趣的生活避坑知识…" placeholder-class="search-placeholder" value="{{keyword}}" bindinput="onSearchInput" bindconfirm="onSearchConfirm" confirm-type="search" />
+    <text class="search-clear" wx:if="{{keyword}}" bindtap="onClearSearch">×</text>
+  </view>
+
+  <!-- 分类筛选 Tab -->
+  <scroll-view class="category-tabs" scroll-x enhanced show-scrollbar="{{false}}">
+    <view class="tab {{activeCategory === '' ? 'tab-active' : ''}}" bindtap="onCategoryTap" data-key="" hover-class="tab-hover" hover-stay-time="{{100}}">全部</view>
+    <view class="tab {{activeCategory === item.key ? 'tab-active' : ''}}" wx:for="{{categories}}" wx:key="key" bindtap="onCategoryTap" data-key="{{item.key}}" hover-class="tab-hover" hover-stay-time="{{100}}">
+      [{{item.id}}] {{item.name}}
+    </view>
+  </scroll-view>
+
+  <view class="divider"></view>
+
+  <!-- 结果列表 -->
+  <block wx:if="{{list.length}}">
+    <view class="list-item" wx:for="{{list}}" wx:key="id" bindtap="onItemTap" data-id="{{item.id}}" hover-class="list-item-active" hover-stay-time="{{80}}">
+      <view class="item-meta">
+        <text class="item-category">[{{categoryMap[item.category].id}}]</text>
+        <text class="item-date">{{item.date}}</text>
+      </view>
+      <text class="item-title">{{item.title}}</text>
+    </view>
+
+    <!-- 加载更多 -->
+    <view class="load-more" wx:if="{{loading}}">
+      <text class="load-more-text">加载中…</text>
+    </view>
+    <view class="load-more" wx:elif="{{!hasMore}}">
+      <text class="load-more-text">— 已加载全部 —</text>
+    </view>
+  </block>
+
+  <!-- 空状态 -->
+  <view class="empty" wx:else>
+    <text class="empty-text">{{keyword ? '未找到相关内容' : '暂无内容'}}</text>
+  </view>
+</view>

@@ -1,0 +1,16 @@
+<!-- 浏览历史 -->
+<view class="page">
+  <block wx:if="{{list.length}}">
+    <view class="list-item" wx:for="{{list}}" wx:key="tipId" bindtap="onItemTap" data-id="{{item.tipId}}" hover-class="list-item-active" hover-stay-time="{{80}}">
+      <view class="item-left">
+        <text class="item-category">[{{categoryMap[item.category].id}}]</text>
+        <text class="item-title">{{item.title}}</text>
+      </view>
+      <text class="item-time">{{item.viewedAt}}</text>
+    </view>
+  </block>
+
+  <view class="empty" wx:else>
+    <text class="empty-text">暂无浏览记录</text>
+  </view>
+</view>

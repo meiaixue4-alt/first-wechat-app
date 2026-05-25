@@ -1,0 +1,94 @@
+.page {
+  padding: 0 var(--spacing-page);
+  min-height: 100vh;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  padding: 32rpx 0;
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 2rpx;
+  background-color: var(--color-bg-surface);
+}
+
+.nickname {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-left: 24rpx;
+  font-family: var(--font-title);
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88rpx;
+  transition: background-color 100ms ease-out;
+}
+
+.menu-item-active {
+  background-color: var(--color-bg-elevated);
+}
+
+.menu-label {
+  font-size: 28rpx;
+  color: var(--color-text-body);
+}
+
+.menu-right {
+  display: flex;
+  align-items: center;
+}
+
+.menu-count {
+  font-family: var(--font-mono);
+  font-size: 22rpx;
+  color: var(--color-text-muted);
+  margin-right: 12rpx;
+}
+
+.menu-arrow {
+  font-family: var(--font-mono);
+  font-size: 22rpx;
+  color: var(--color-text-muted);
+}
+
+.menu-divider {
+  height: 0.5px;
+  background-color: var(--color-border);
+}
+
+.footer {
+  text-align: center;
+  padding: 48rpx 0;
+}
+
+.footer-link {
+  font-size: 22rpx;
+  color: var(--color-text-muted);
+}
+
+.footer-sep {
+  font-size: 22rpx;
+  color: var(--color-border);
+  margin: 0 12rpx;
+}
+
+.version {
+  text-align: center;
+  font-size: 20rpx;
+  color: var(--color-text-muted);
+  padding-bottom: 48rpx;
+  opacity: 0.4;
+}

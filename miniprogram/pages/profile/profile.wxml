@@ -1,0 +1,56 @@
+<!-- 我的 -->
+<view class="page">
+  <!-- 用户信息区 -->
+  <view class="user-section">
+    <open-data class="avatar" type="userAvatarUrl"></open-data>
+    <open-data class="nickname" type="userNickName"></open-data>
+  </view>
+
+  <view class="divider"></view>
+
+  <!-- 功能入口 -->
+  <view class="menu-item" bindtap="goFavorites" hover-class="menu-item-active" hover-stay-time="{{80}}">
+    <text class="menu-label">我的收藏</text>
+    <view class="menu-right">
+      <text class="menu-count">{{favoriteCount}}</text>
+      <text class="menu-arrow">></text>
+    </view>
+  </view>
+  <view class="menu-divider"></view>
+
+  <view class="menu-item" bindtap="goHistory" hover-class="menu-item-active" hover-stay-time="{{80}}">
+    <text class="menu-label">浏览历史</text>
+    <view class="menu-right">
+      <text class="menu-arrow">></text>
+    </view>
+  </view>
+  <view class="menu-divider"></view>
+
+  <view class="menu-item" bindtap="goMyFeedback" hover-class="menu-item-active" hover-stay-time="{{80}}">
+    <text class="menu-label">我的质疑反馈</text>
+    <view class="menu-right">
+      <text class="menu-count">{{disputeCount}}</text>
+      <text class="menu-arrow">></text>
+    </view>
+  </view>
+  <view class="menu-divider"></view>
+
+  <view class="menu-item" bindtap="goSettings" hover-class="menu-item-active" hover-stay-time="{{80}}">
+    <text class="menu-label">设置</text>
+    <view class="menu-right">
+      <text class="menu-arrow">></text>
+    </view>
+  </view>
+
+  <view class="divider" style="margin-top: 48rpx;"></view>
+
+  <!-- 页脚 -->
+  <view class="footer">
+    <text class="footer-link" bindtap="goStatic" data-type="about">关于我们</text>
+    <text class="footer-sep">|</text>
+    <text class="footer-link" bindtap="goStatic" data-type="terms">用户协议</text>
+    <text class="footer-sep">|</text>
+    <text class="footer-link" bindtap="goStatic" data-type="privacy">隐私政策</text>
+  </view>
+  <view class="version" bindtap="onVersionTap">v1.0.0</view>
+</view>

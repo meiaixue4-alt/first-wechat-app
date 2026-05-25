@@ -1,0 +1,32 @@
+/* 格物致知 · 全局样式变量 */
+/* 视觉方案：示波器 · 实验报告 (Oscilloscope Lab Report) */
+
+page {
+  --color-bg-primary: #0d1117;
+  --color-bg-surface: #161b22;
+  --color-bg-elevated: #1c2128;
+  --color-text-primary: #e6edf3;
+  --color-text-body: #c9d1d9;
+  --color-text-muted: #8b949e;
+  --color-accent: #58a6ff;
+  --color-positive: #3fb950;
+  --color-warning: #d9534f;
+  --color-border: #30363d;
+  --color-quote-bar: #58a6ff;
+  --color-tag-bg: #1c2128;
+
+  --font-title: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-body: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'SF Mono', 'Consolas', 'Menlo', monospace;
+
+  --spacing-page: 24rpx;
+  --spacing-paragraph: 16rpx;
+  --spacing-block: 32rpx;
+  --radius: 2rpx;
+
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-body);
+  font-family: var(--font-body);
+  font-size: 28rpx;
+  line-height: 1.8;
+}

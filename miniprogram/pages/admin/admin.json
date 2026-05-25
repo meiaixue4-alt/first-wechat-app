@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "dispute-modal": "/components/dispute-modal/dispute-modal"
+  }
+}
