@@ -30,7 +30,7 @@ Page({
   onUseful() {
     const tip = this.data.tip
     if (!tip) return
-    storageRepo.addFeedback({ tipId: tip.id, type: 'useful', userId: '' })
+    storageRepo.addFeedback({ tipId: tip.id, type: 'useful' })
     tip.usefulCount += 1
     this.setData({ tip, usefulDone: true })
     wx.showToast({ title: '感谢反馈', icon: 'none', duration: 1500 })
@@ -39,7 +39,7 @@ Page({
   onNotInterested() {
     const tip = this.data.tip
     if (!tip) return
-    storageRepo.addFeedback({ tipId: tip.id, type: 'not-interested', userId: '' })
+    storageRepo.addFeedback({ tipId: tip.id, type: 'not-interested' })
     wx.showToast({ title: '已记录，将减少此类推荐', icon: 'none', duration: 1500 })
   },
 
@@ -57,7 +57,6 @@ Page({
     storageRepo.addFeedback({
       tipId,
       type: 'dispute',
-      userId: '',
       disputeReason: reason,
       identity
     })

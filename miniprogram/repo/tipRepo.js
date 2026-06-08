@@ -1,6 +1,15 @@
 const { CATEGORY_MAP, PAGE_SIZE, getTodayStr } = require('../config/constants')
 const mockTips = require('../data/mock-tips')
 
+let _cloudUnavailableNotified = false
+
+function _notifyCloudUnavailable() {
+  if (!_cloudUnavailableNotified) {
+    _cloudUnavailableNotified = true
+    wx.showToast({ title: '网络不稳定，使用离线数据', icon: 'none', duration: 2000 })
+  }
+}
+
 /* ========== 本地缓存层（优先云 → 缓存 → Mock） ========== */
 
 const CACHE_KEYS = {
@@ -144,7 +153,7 @@ async function getTodayTips() {
         cacheSet(CACHE_KEYS.TODAY, tips)
         return tips
       }
-    } catch (_) {}
+    } catch (_) { _notifyCloudUnavailable() }
   }
   // 云失败 → 尝试缓存
   const cached = cacheGet(CACHE_KEYS.TODAY)
@@ -162,7 +171,7 @@ async function getById(id) {
         cacheSet(CACHE_KEYS.TIP(id), res.data)
         return res.data
       }
-    } catch (_) {}
+    } catch (_) { _notifyCloudUnavailable() }
   }
   // 尝试缓存
   const cached = cacheGet(CACHE_KEYS.TIP(id))
@@ -186,7 +195,7 @@ async function getByCategory(category, page, pageSize) {
       const result = { list: res.data || [], total: totalRes.total, hasMore: (page - 1) * size + (res.data || []).length < totalRes.total }
       cacheSet(CACHE_KEYS.CATEGORY(category, page), result)
       return result
-    } catch (_) {}
+    } catch (_) { _notifyCloudUnavailable() }
   }
   const cached = cacheGet(CACHE_KEYS.CATEGORY(category, page))
   if (cacheValid(cached, CACHE_TTL.list)) return cached.data
@@ -211,7 +220,7 @@ async function search(keyword, page, pageSize) {
       const result = { list: res.data || [], total: totalRes.total, hasMore: (page - 1) * size + (res.data || []).length < totalRes.total }
       cacheSet(CACHE_KEYS.SEARCH(keyword, page), result)
       return result
-    } catch (_) {}
+    } catch (_) { _notifyCloudUnavailable() }
   }
   const cached = cacheGet(CACHE_KEYS.SEARCH(keyword, page))
   if (cacheValid(cached, CACHE_TTL.list)) return cached.data
@@ -232,7 +241,7 @@ async function getAll(page, pageSize) {
       const result = { list: res.data || [], total: totalRes.total, hasMore: (page - 1) * size + (res.data || []).length < totalRes.total }
       cacheSet(CACHE_KEYS.ALL(page), result)
       return result
-    } catch (_) {}
+    } catch (_) { _notifyCloudUnavailable() }
   }
   const cached = cacheGet(CACHE_KEYS.ALL(page))
   if (cacheValid(cached, CACHE_TTL.list)) return cached.data

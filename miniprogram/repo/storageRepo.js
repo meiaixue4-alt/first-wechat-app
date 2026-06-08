@@ -11,6 +11,16 @@ function genId() {
   return 'f_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 7)
 }
 
+/** 获取当前用户标识 */
+function getUserId() {
+  try {
+    const app = getApp()
+    return app.getUserId ? app.getUserId() : 'anonymous'
+  } catch (_) {
+    return 'anonymous'
+  }
+}
+
 /* ========== 收藏 ========== */
 
 function getFavorites() {
@@ -80,6 +90,7 @@ function addFeedback(feedback) {
   const record = {
     id: genId(),
     ...feedback,
+    userId: feedback.userId || getUserId(),
     createdAt: new Date().toISOString()
   }
   const list = getFeedback()

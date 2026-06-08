@@ -22,3 +22,10 @@ Thumbs.db
 # 日志
 *.log
 npm-debug.log*
+
+# Claude 内部文件
+.agents/
+
+# 临时文件
+plan.md
+tip_all_100.json

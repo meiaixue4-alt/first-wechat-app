@@ -49,7 +49,7 @@ Page({
 
   onUseful(e) {
     const id = e.currentTarget.dataset.id
-    storageRepo.addFeedback({ tipId: id, type: 'useful', userId: '' })
+    storageRepo.addFeedback({ tipId: id, type: 'useful' })
     const tips = this.data.tips.map(t => {
       if (t.id === id) { t.usefulCount += 1; t.usefulDone = true }
       return t
@@ -60,7 +60,7 @@ Page({
 
   onNotInterested(e) {
     const id = e.currentTarget.dataset.id
-    storageRepo.addFeedback({ tipId: id, type: 'not-interested', userId: '' })
+    storageRepo.addFeedback({ tipId: id, type: 'not-interested' })
     const tips = this.data.tips.map(t => {
       if (t.id === id) { t.notInterestedDone = true }
       return t
@@ -83,7 +83,6 @@ Page({
     storageRepo.addFeedback({
       tipId,
       type: 'dispute',
-      userId: '',
       disputeReason: reason,
       identity
     })
