@@ -29,15 +29,37 @@
 
     <!-- 互动操作栏 -->
     <view class="action-bar">
-      <text class="action-btn {{usefulDone ? 'useful-done' : ''}}" bindtap="onUseful" hover-class="action-btn-useful-hover" hover-stay-time="{{100}}">有用 {{tip.usefulCount}}</text>
-      <text class="action-sep">·</text>
-      <text class="action-btn" bindtap="onNotInterested" hover-class="action-btn-neutral-hover" hover-stay-time="{{100}}">不感兴趣</text>
-      <text class="action-sep">·</text>
-      <text class="action-btn action-dispute" bindtap="onDispute" hover-class="action-btn-dispute-hover" hover-stay-time="{{100}}">质疑</text>
-      <text class="action-sep">·</text>
-      <text class="action-btn {{isFav ? 'fav-active' : ''}}" bindtap="onToggleFav" hover-class="action-btn-fav-hover" hover-stay-time="{{100}}">收藏</text>
-      <text class="action-sep">·</text>
-      <button class="share-btn" open-type="share" hover-class="action-btn-fav-hover">转发</button>
+      <!-- 第一行：态度表态 — 药丸按钮 -->
+      <view class="action-attitude">
+        <view class="pill-btn {{usefulDone ? 'pill-useful-done' : ''}}" bindtap="onUseful" hover-class="pill-useful-hover">
+          <text class="pill-icon">👍</text>
+          <text class="pill-label">有用</text>
+          <text class="pill-count" wx:if="{{tip.usefulCount}}">{{tip.usefulCount}}</text>
+        </view>
+        <view class="pill-btn" bindtap="onNotInterested" hover-class="pill-neutral-hover">
+          <text class="pill-icon">👎</text>
+          <text class="pill-label">不感兴趣</text>
+        </view>
+        <view class="pill-btn" bindtap="onDispute" hover-class="pill-dispute-hover">
+          <text class="pill-icon">⚠️</text>
+          <text class="pill-label">质疑</text>
+        </view>
+      </view>
+      <!-- 第二行：内容行为 -->
+      <view class="action-behavior">
+        <view class="behavior-half">
+          <view class="text-btn {{isFav ? 'text-fav-active' : ''}}" bindtap="onToggleFav" hover-class="text-btn-hover">
+            <text class="text-btn-icon">{{isFav ? '★' : '☆'}}</text>
+            <text class="text-btn-label">收藏</text>
+          </view>
+        </view>
+        <view class="behavior-half">
+          <button class="text-btn share-btn" open-type="share" hover-class="text-btn-hover">
+            <text class="text-btn-icon">↗</text>
+            <text class="text-btn-label">转发</text>
+          </button>
+        </view>
+      </view>
     </view>
 
     <!-- 底部引流 -->

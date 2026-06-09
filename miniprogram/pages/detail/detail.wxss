@@ -71,71 +71,150 @@
   margin-top: 4rpx;
 }
 
-/* 操作栏 */
+/* ===== 操作栏 ===== */
 .action-bar {
+  margin-top: 8rpx;
+}
+
+/* --- 第一行：态度表态 · 药丸按钮 --- */
+.action-attitude {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pill-btn {
   display: flex;
   align-items: center;
+  padding: 10rpx 22rpx;
+  border-radius: 36rpx;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  transition: all 150ms ease-out;
 }
 
-.action-btn {
-  font-family: var(--font-mono);
+.pill-icon {
+  font-size: 26rpx;
+  margin-right: 4rpx;
+  line-height: 1;
+}
+
+.pill-label {
   font-size: 24rpx;
-  color: var(--color-text-muted);
-  transition: color 150ms ease-out;
-  padding: 4rpx 0;
-}
-
-.action-dispute {
-  /* 默认态同其他按钮 */
-}
-
-.action-sep {
-  margin: 0 10rpx;
-  color: var(--color-text-muted);
-  font-family: var(--font-mono);
-}
-
-/* 按钮悬浮/按压态 */
-.action-btn-useful-hover {
-  color: var(--color-positive);
-}
-
-.action-btn-dispute-hover {
-  color: var(--color-warning);
-}
-
-.action-btn-fav-hover {
-  color: var(--color-text-primary);
-}
-
-.action-btn-neutral-hover {
   color: var(--color-text-body);
+  font-family: var(--font-body);
+  line-height: 1;
 }
 
-/* 按钮激活态 */
-.useful-done {
+.pill-count {
+  font-size: 22rpx;
+  color: var(--color-text-muted);
+  margin-left: 4rpx;
+  font-family: var(--font-mono);
+  line-height: 1;
+}
+
+/* 有用 — 常态 & 激活 */
+.pill-useful-done {
+  background-color: rgba(63, 185, 80, 0.12);
+  border-color: rgba(63, 185, 80, 0.35);
+}
+.pill-useful-done .pill-label,
+.pill-useful-done .pill-count {
   color: var(--color-positive);
 }
 
-.fav-active {
-  color: var(--color-text-primary);
+.pill-useful-hover {
+  background-color: rgba(63, 185, 80, 0.08);
+  border-color: rgba(63, 185, 80, 0.25);
 }
 
-/* 转发按钮 — 覆盖原生 button 样式 */
-.share-btn {
-  display: inline;
-  padding: 0;
-  margin: 0;
-  background: none;
-  border: none;
-  font-family: var(--font-mono);
-  font-size: 24rpx;
+/* 不感兴趣 */
+.pill-neutral-hover {
+  background-color: var(--color-bg-elevated);
+}
+
+/* 质疑 */
+.pill-dispute-hover {
+  background-color: rgba(217, 83, 79, 0.08);
+  border-color: rgba(217, 83, 79, 0.25);
+}
+
+/* --- 第二行：内容行为 · 描边药丸 --- */
+.action-behavior {
+  display: flex;
+  align-items: center;
+  margin-top: 24rpx;
+}
+
+.behavior-half {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.text-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180rpx;
+  padding: 14rpx 0;
+  border-radius: 36rpx;
+  border: 1px solid var(--color-border);
+  background-color: transparent;
+  line-height: 1;
+  transition: all 150ms ease-out;
+}
+
+.text-btn-icon {
+  font-size: 32rpx;
+  margin-right: 8rpx;
   color: var(--color-text-muted);
   line-height: 1;
 }
 
+.text-btn-label {
+  font-size: 30rpx;
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  line-height: 1;
+}
+
+.text-btn-hover {
+  background-color: var(--color-bg-surface);
+  border-color: var(--color-text-muted);
+}
+
+/* 收藏激活态 */
+.text-fav-active {
+  border-color: rgba(88, 166, 255, 0.35);
+  background-color: rgba(88, 166, 255, 0.08);
+}
+.text-fav-active .text-btn-icon,
+.text-fav-active .text-btn-label {
+  color: var(--color-accent);
+}
+
+/* 转发 — 覆盖原生 button 样式 */
+.share-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 180rpx !important;
+  padding: 14rpx 0 !important;
+  margin: 0 !important;
+  border-radius: 36rpx !important;
+  border: 1px solid var(--color-border) !important;
+  background-color: transparent !important;
+  line-height: 1 !important;
+  box-sizing: content-box !important;
+  transition: all 150ms ease-out !important;
+}
+.share-btn.text-btn-hover {
+  background-color: var(--color-bg-surface) !important;
+  border-color: var(--color-text-muted) !important;
+}
 .share-btn::after {
-  border: none;
+  border: none !important;
 }
 
 /* 底部引流 */

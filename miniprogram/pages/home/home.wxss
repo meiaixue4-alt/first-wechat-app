@@ -46,10 +46,21 @@
   background-color: var(--color-bg-elevated);
 }
 
-.card-header {
+.card-title {
+  display: block;
+  font-family: var(--font-title);
+  font-size: 34rpx;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.4;
+}
+
+.card-meta {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  gap: 12rpx;
+  margin-top: 4rpx;
 }
 
 .card-category {
@@ -65,25 +76,15 @@
   color: var(--color-text-muted);
 }
 
-.card-title {
-  display: block;
-  font-family: var(--font-title);
-  font-size: 34rpx;
-  font-weight: 700;
-  color: var(--color-text-primary);
-  line-height: 1.4;
-  margin-top: 8rpx;
-}
-
 .card-summary {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-  font-size: 28rpx;
-  color: var(--color-text-body);
+  font-size: 26rpx;
+  color: var(--color-text-muted);
   line-height: 1.5;
-  margin-top: 8rpx;
+  margin-top: 6rpx;
 }
 
 /* 操作栏 */

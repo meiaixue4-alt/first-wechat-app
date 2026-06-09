@@ -20,17 +20,17 @@
   <!-- Tips 卡片 -->
   <block wx:else>
     <view class="tip-card" wx:for="{{tips}}" wx:key="id" bindtap="onCardTap" data-id="{{item.id}}" hover-class="card-active" hover-stay-time="{{80}}">
-      <!-- 编号行 -->
-      <view class="card-header">
-        <text class="card-category">[{{categoryMap[item.category].id}}] {{categoryMap[item.category].name}}</text>
-        <text class="card-date">{{item.date}}</text>
-      </view>
-
       <!-- 标题 -->
       <text class="card-title">{{item.title}}</text>
 
       <!-- 摘要 -->
       <text class="card-summary">{{item.summary}}</text>
+
+      <!-- 元信息 -->
+      <view class="card-meta">
+        <text class="card-category">[{{categoryMap[item.category].id}}] {{categoryMap[item.category].name}}</text>
+        <text class="card-date">{{item.date}}</text>
+      </view>
 
       <!-- 操作栏 -->
       <view class="card-actions">
